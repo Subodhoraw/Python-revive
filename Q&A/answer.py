@@ -4,4 +4,11 @@ list = [1,2,3,4,5]
 for  n in list:
     list_squares.append(n**2)
 print(list_squares)
+#using list comprehension
+list_squares_comp = [n**2 for n in list] #list comprehension
+print(list_squares_comp)
+def squares(n):
+    return [ i **2 for i in range(n)]
+print(squares(5)) #output [0,1,4,9,16]
+
     
