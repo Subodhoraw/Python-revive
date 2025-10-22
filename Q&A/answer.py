@@ -23,3 +23,15 @@ print(list)
 #extend
 list.extend(list2)
 print(list)
+
+""" how do you add 2 dictionaries using merge_dicts(a,b) """
+dict1 ={'a':1,'b':2,'c':3,'d':5}
+dict2 = {'b':4,'c':5,'d':7}
+merged = dict1 | dict2
+print(merged)
+merge_dict = {**dict1, **dict2} #** unpack the dict
+print(merge_dict) 
+
+"""explain exception handling try/except/finally/else. Provide an example that reads and input with with exception handling """
+
+
