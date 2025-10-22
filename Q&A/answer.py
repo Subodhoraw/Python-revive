@@ -11,4 +11,15 @@ def squares(n):
     return [ i **2 for i in range(n)]
 print(squares(5)) #output [0,1,4,9,16]
 
-    
+"""QQ how insert and append, extend work for with example """
+
+list = [1,2,3,4,5]
+list2=[1,3,5]
+list.insert(1,list2)
+print(list)
+#append
+list.append(5)
+print(list)
+#extend
+list.extend(list2)
+print(list)
