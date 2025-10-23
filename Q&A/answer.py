@@ -51,4 +51,37 @@ def zero_division():
         print("operation completed")
 
 print("Result:", zero_division())
+"""## explain default parameter values and the mutable_default gotcha(show exaple bug) 
+## what are default paramemters?
+it define a fallback value for function arguement so yoou dont have to pass it everytime
+Imagine a shared shopping cart 🛒 used by everyone —
+if you don’t start with your own empty cart,
+your items get mixed up with everyone else’s!
+
+That’s exactly what happens when you use a mutable default in Python.
+"""
+def greet(name ="guest"):
+    print(f"hello,{name}!")
+greet("subodh")
+# here is a bug 
+def add_item(item, items =[]):
+    items.append(item)
+    return items
+
+#now see what happens 
+print(add_item("apple"))
+print(add_item("banana"))
+print(add_item("cherry"))
+#its wrong its gonna mess up all
+
+## correct way
+def add_item(item, items= None):
+    if items is None:
+        items=[] # create new list each time 
+    items.append(item)
+    return items
+#now 
+print(add_item("apple"))
+print (add_item("honey"))
+      
 
