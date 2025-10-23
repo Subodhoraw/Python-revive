@@ -33,5 +33,22 @@ merge_dict = {**dict1, **dict2} #** unpack the dict
 print(merge_dict) 
 
 """explain exception handling try/except/finally/else. Provide an example that reads and input with with exception handling """
+def zero_division():
+    try:
+        a = int(input("Enter numerator: "))
+        b = int(input("Enter demoniator: "))
+        result = a/b
+    except ZeroDivisionError:
+        print("You cannot divide by zero")
+        return None
+    except ValueError:
+        print("Please enter number only")
+        return None
+    else:
+        print("Division Successfull")
+        return result
+    finally:
+        print("operation completed")
 
+print("Result:", zero_division())
 
