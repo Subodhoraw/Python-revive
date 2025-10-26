@@ -1,0 +1,104 @@
+Excellent — this question touches on **Python’s “context manager”** concept, which is key to writing safe and clean file-handling code. Let’s break it down clearly 👇
+
+---
+
+## 🧠 What Does the `with` Statement Do?
+
+The `with` statement is used to **automatically manage resources** —
+especially files — so you **don’t have to manually close them**.
+
+When you use `with open(...) as f:`, Python will:
+
+1. **Open the file**
+2. Let you work with it
+3. **Automatically close it**, even if an error occurs
+
+✅ No need for `f.close()` — Python does it safely for you.
+
+---
+
+### 🔴 Without `with` (Risky Example)
+
+```python
+f = open("data.txt", "r")
+lines = f.readlines()
+f.close()
+```
+
+⚠️ Problem:
+If something goes wrong before `f.close()`,
+the file might **remain open** → resource leak!
+
+---
+
+### 🟢 With `with` (Safe Example)
+
+```python
+with open("data.txt", "r") as f:
+    lines = f.readlines()
+```
+
+Now the file is **automatically closed**,
+even if an exception (like `FileNotFoundError`) occurs.
+
+---
+
+## ⚙️ Function Example: `read_lines(path)`
+
+Let’s write your requested safe function 👇
+
+```python
+def read_lines(path):
+    """
+    Safely reads all lines from a file and returns them as a list.
+    """
+    try:
+        with open(path, "r") as file:
+            lines = file.readlines()
+            return lines
+    except FileNotFoundError:
+        print(f"Error: The file '{path}' was not found.")
+        return []
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
+        return []
+```
+
+---
+
+### ✅ Example Usage
+
+```python
+lines = read_lines("notes.txt")
+print(lines)
+```
+
+If `notes.txt` exists → it prints a list of lines
+If not → it prints a friendly error message, no crash.
+
+---
+
+## 💡 Why Prefer `with`?
+
+| Reason                       | Description                                                |
+| ---------------------------- | ---------------------------------------------------------- |
+| ✅ Automatic cleanup          | Closes file automatically                                  |
+| 🧱 Exception-safe            | Even if an error occurs, file closes                       |
+| 🧠 Cleaner code              | No need for manual `close()`                               |
+| 🧩 Works with many resources | Also works for network connections, database cursors, etc. |
+
+---
+
+## 🧠 Real-life Analogy
+
+Think of `with` like a **hotel key card**:
+
+* You use it (open the room)
+* When you check out, it **automatically deactivates** (file closes)
+* No risk of leaving the door open 🔒
+
+---
+
+Would you like me to extend this example to also include **writing** (`write_lines(path, data)`) using the same safe pattern?
+
+
