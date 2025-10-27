@@ -84,4 +84,22 @@ def add_item(item, items= None):
 print(add_item("apple"))
 print (add_item("honey"))
       
+###### how dyou check the the type of an objects? compare isinstance() vs types
+x = 5
+print(type(x))
+print(type(x)== int)
+print(type(x) is int)
+print(isinstance(x, int))
+print(isinstance(x,(int,float)))
 
+##in details 
+class Animal:
+    pass
+class Dog(Animal):
+    pass
+my_dog = Dog()
+print(type(my_dog)==Dog)
+print(type(my_dog)==Animal)
+
+print(isinstance(my_dog, Dog))
+print(isinstance(my_dog, Animal))
