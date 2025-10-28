@@ -118,3 +118,10 @@ for v in Values:
     else:
         print(f"{repr(v):>10}  Truthy")
 
+#what are dict comprehension?
+# convert a list to dict
+# Just like list comprehensions,
+"""but instead of creating a list ([]),
+you create a dictionary ({}) — with key–value pairs. """
+squares = {x: x**2 for x in range(5)}
+print(squares)
