@@ -103,3 +103,11 @@ print(type(my_dog)==Animal)
 
 print(isinstance(my_dog, Dog))
 print(isinstance(my_dog, Animal))
+### what are the python boolean values (True/False) How are other type thrutsy and falsey
+# booleans are used for truthsy and false here is an example 
+is_raining = True 
+if is_raining:
+    print("take an umbrella")
+else:
+    print("enjoy the sun")
+    
