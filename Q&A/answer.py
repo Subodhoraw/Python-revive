@@ -110,4 +110,11 @@ if is_raining:
     print("take an umbrella")
 else:
     print("enjoy the sun")
-    
+## Example demo code 
+Values = [0,1,"","hi",[],[10],None,{},{"a":1}]  
+for v in Values:
+    if v: 
+        print(f"{repr(v):<10}  Truthy")
+    else:
+        print(f"{repr(v):>10}  Truthy")
+
