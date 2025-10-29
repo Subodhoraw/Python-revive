@@ -125,3 +125,7 @@ for v in Values:
 you create a dictionary ({}) — with key–value pairs. """
 squares = {x: x**2 for x in range(5)}
 print(squares)
+squares = {x:x**2 for x in range(5)}
+print(squares)
+even_squares = { x: x**2 for x in range(5) if x%2==0}
+print(even_squares)
