@@ -129,3 +129,17 @@ squares = {x:x**2 for x in range(5)}
 print(squares)
 even_squares = { x: x**2 for x in range(5) if x%2==0}
 print(even_squares)
+
+#x = 10
+y = 5
+print(f" the sum od{x} and {y} is {x+y}")
+
+name = "alice"
+print(f"Uppercase:{name.upper()}") 
+text = "  helo "
+print(f"trimmed:{text.strip()}'")
+
+
+# numnber foprmatiing 
+pi = 3.14159265359
+print(f"pi to 2 decimals : {pi:.2f}")
