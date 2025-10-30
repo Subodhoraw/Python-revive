@@ -143,3 +143,9 @@ print(f"trimmed:{text.strip()}'")
 # numnber foprmatiing 
 pi = 3.14159265359
 print(f"pi to 2 decimals : {pi:.2f}")
+## apdding with zeros
+number = 5
+print(f"padded: {number:05}")
+#thousand separetor 
+large_number = 100000
+print(f'formatted:{large_number: ,}')
