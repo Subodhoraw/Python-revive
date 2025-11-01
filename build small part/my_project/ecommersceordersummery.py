@@ -15,3 +15,4 @@ def generate_order_summary():
 
     ## generate receipt 
     print(f"{'='*50}")
+    print(f"bill summery{}")
