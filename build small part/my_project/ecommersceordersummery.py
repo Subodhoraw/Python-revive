@@ -15,4 +15,15 @@ def generate_order_summary():
 
     ## generate receipt 
     print(f"{'='*50}")
-    print(f"bill summery{}")
+    print(f"{'Bill summery':^50}")
+    print(f"{'-'*50}")
+    print(f"\nCustomer: {customer_name}")
+    print(f"order_id: #{order_id:06d}")
+    print(f"\n{'Item':<20}{'Qty':>5}{'price':>10}{'total':10}")
+    
+    for item in items:
+        name = item["name"]
+        qty = item["qty"]
+        price = item["price"]
+        Line_total = price *qty
+        print(f"{name:<20}{qty:}")
