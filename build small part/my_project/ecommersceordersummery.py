@@ -26,4 +26,9 @@ def generate_order_summary():
         qty = item["qty"]
         price = item["price"]
         Line_total = price *qty
-        print(f"{name:<20}{qty:}")
+        print(f"{name:<20}{qty:>5} ${price:>9,.2f}  ${Line_total:>9.2f}")
+        print(f"{'-'*50}")
+        print(f"{'Subtotal:':<37}{subtotal:>9.2f}")
+        print(f"{'Tax(8%):':<37}{tax:>9.2f}")
+        print(f"{'='*50}")
+        print(f"")
