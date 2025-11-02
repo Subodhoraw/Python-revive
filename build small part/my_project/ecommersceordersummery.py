@@ -34,4 +34,12 @@ def generate_order_summary():
         print(f"{'Total:':<37} ${total:>9.2f}")
         print(f"{'='*50}")
 
-        discount_eligible
+        discount_eligible = total > 1000
+        print(f"\n{'🍛' if discount_eligible else'😊'} Order Status:"
+              f"{'Eligible for discount!' if discount_eligible else'processing'}")
+        if total > 1000:
+            savings = total * 0.14
+            final_price = total -savings 
+            print(f"You save: ${savings:.2f}")
+            print(f" Final price: ${final_price:.2f}")
+generate_order_summary()
