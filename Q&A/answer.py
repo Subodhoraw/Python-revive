@@ -202,3 +202,13 @@ def generate_order_summary():
 
 # Run the example
 generate_order_summary()
+class Bankaccount:
+    def __init__(self,balance):
+        self.balance = balance
+    def deposit(self,amount):
+        self.balance += amount 
+        return f"DEposited ${amount}. New balance: ${self.balance}"
+my_account = Bankaccount(100) 
+print(my_account.balance) 
+print(my_account.deposit(50))
+print(my_account.balance) 
