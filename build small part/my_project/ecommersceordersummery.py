@@ -31,4 +31,7 @@ def generate_order_summary():
         print(f"{'Subtotal:':<37}{subtotal:>9.2f}")
         print(f"{'Tax(8%):':<37}{tax:>9.2f}")
         print(f"{'='*50}")
-        print(f"")
+        print(f"{'Total:':<37} ${total:>9.2f}")
+        print(f"{'='*50}")
+
+        discount_eligible
