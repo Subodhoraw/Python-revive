@@ -212,3 +212,26 @@ my_account = Bankaccount(100)
 print(my_account.balance) 
 print(my_account.deposit(50))
 print(my_account.balance) 
+class Car:
+    # CLASS VARIABLE - same for all cars
+    wheels = 4
+    
+    def __init__(self, brand, color):
+        # INSTANCE VARIABLES - different for each car
+        self.brand = brand
+        self.color = color
+
+# Create two cars
+car1 = Car("Toyota", "red")
+car2 = Car("Honda", "blue")
+
+# Instance variables are different
+print(car1.brand)  # Toyota
+print(car2.brand)  # Honda
+print(car1.color)  # red
+print(car2.color)  # blue
+
+# Class variable is the same for both
+print(car1.wheels)  # 4
+print(car2.wheels)  # 4
+print(Car.wheels)   # 4 (can access via class name)
