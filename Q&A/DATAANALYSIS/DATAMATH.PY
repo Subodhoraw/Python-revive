@@ -39,10 +39,14 @@ mode = pd.Series(num2)
 print(mode)
 #from scipy 
 from scipy import stats
-mode = stats.mode(num2 , keepdims = True)
+mode = stats.mode(num2 , keepdims = True) ### important to learn 
 print(f"Mode: {mode.mode[0]}")
 
 """ real life example """
 scores = [75, 78, 78, 39,56, 59, 56, 89]
 print("===Test Scores analysis===")
 print(f"Data:{scores}\n")
+print(max(scores))
+print(statistics.median(scores))
+print(np.mean(scores))
+print(pd.Series(scores))
