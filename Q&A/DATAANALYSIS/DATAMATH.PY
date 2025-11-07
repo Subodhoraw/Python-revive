@@ -87,9 +87,20 @@ def analyze_range(data):
 data = [ 100, 200,500,600,1200]
 range_value = analyze_range(data)
 
+""" we will work with three diffrent data sets """
+groupA = [ 70,80,90,100,120]
+groupB = [50,60,30,70, 80, 50]
+groupC = [79, 80, 80, 81, 81]
 
-
-
+datasets = [groupA, groupB,groupC]
+names = ['Group A', 'Group B','Group C ']
+print("RANGE comparisons")
+print("-"*40)
+for name, data in zip(names, datasets):
+    range_val = np.ptp(data)
+    print(f"{name}:{range_val}")
+    print(f" Min:{min(data)},Max:{max(data)}")
+    print()
 
 
 
