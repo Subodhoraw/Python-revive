@@ -50,3 +50,20 @@ print(max(scores))
 print(statistics.median(scores))
 print(np.mean(scores))
 print(pd.Series(scores))
+"""range"""
+sales = [ 100, 200,500,600,1200]
+maximum = max(sales)
+minimum = min(sales)
+range_value = maximum - minimum
+print(minimum)
+print(maximum)
+print(range_value)
+# Numpy has a builtup ptp(peak to peak) function 
+range_value = np.ptp(sales)
+range_value = np.max(sales) - np.min(sales)
+print(range_value)
+### pandas
+df = pd.Series(sales)
+print(df.max)
+
+
