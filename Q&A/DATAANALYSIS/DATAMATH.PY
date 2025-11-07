@@ -66,4 +66,30 @@ print(range_value)
 df = pd.Series(sales)
 print(df.max)
 
+""" complete analysis fiction """
+def analyze_range(data):
+    """ comprehensive range analysis"""
+    maximum = np.max(data)
+    minimum = np.min(data)
+    range_value = np.ptp(data)
+
+    print("="* 40)
+    print(F"{'Range Analysis':^40}")
+    print("="*40)
+    print(f"Data:  {data}")
+    print(f"Maximum valu: {maximum}")
+    print(f"Minimum value: {minimum}")
+    print(f"Range VAlue: {range_value} ")
+    print(f"Interpretation : Data spans {range_value} units")
+    print("="* 40)
+    return range_value 
+
+data = [ 100, 200,500,600,1200]
+range_value = analyze_range(data)
+
+
+
+
+
+
 
