@@ -19,7 +19,7 @@ for person, sales in sales_data.items():
     print(f" Max: $ {max(sales):,}")
 
     if range_val < 5000:
-        print(f" very consistent")
+        print(f" very consistent😊😊😊😊😊😊")
     elif range_val < 2000:
         print(f"  Consistency: Moderately Consistent ⭐⭐")
     else:
