@@ -10,3 +10,12 @@ print("="*40)
 
 for person, sales in sales_data.items():
     range_val = max(sales) - min(sales)
+    mean_val = np.means(sales)
+
+    print(f"\n{person}:")
+    print(f" Range: ${range_val:,}")
+    print(f"Average: ${mean_val:,.0f}")
+    print(f" Min: ${min(sales):,}")
+    print(f"  Max: $ {max(sales):,}")
+    
+
