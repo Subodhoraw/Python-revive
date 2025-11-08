@@ -14,9 +14,9 @@ for person, sales in sales_data.items():
 
     print(f"\n{person}:")
     print(f" Range: ${range_val:,}")
-    print(f"Average: ${mean_val:,.0f}")
+    print(f" Average: ${mean_val:,.0f}")
     print(f" Min: ${min(sales):,}")
-    print(f"  Max: $ {max(sales):,}")
+    print(f" Max: $ {max(sales):,}")
 
     if range_val < 5000:
         print(f" very consistent")
