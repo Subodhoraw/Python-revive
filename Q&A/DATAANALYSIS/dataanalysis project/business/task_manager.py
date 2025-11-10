@@ -43,3 +43,25 @@ class TaskManager:
         print(f"\n{'='*60}")
         print(f"Task list - {self.owner}")
         print(f"{'='*60}")
+
+        if not self.tasks:
+            print("no tasks yet")
+        else:
+            for i, task in enumerate(self.tasks, 1):
+                print(f"{i}.{task.display()}")
+        pending = self.get_pending()
+        print(f"\n{pending} pending task(s) out of {len(self.tasks)} total ")
+        print(f"{'='*60}")
+
+#using the task manager 
+my_tasks = TaskManager("alice")
+print(my_tasks.add_task("Buy groceries", "High"))
+print(my_tasks.add_task("Finish homework", "High"))
+print(my_tasks.add_task("Call mom", "Medium"))
+print(my_tasks.add_task("Clean room", "Low"))
+print(my_tasks.add_task("Read book", "Low"))
+print(f"\n{my_tasks.completed_task(0)}")
+print(f"{my_tasks.completed_task(2)}")
+# Display all tasks
+
+my_tasks.display_all()
