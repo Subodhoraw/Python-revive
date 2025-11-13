@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Code Explanation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 1.2em;
+        }
+
+        .code-section {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
+            line-height: 1.8;
+            overflow-x: auto;
+        }
+
+        .keyword {
+            color: #ff79c6;
+        }
+
+        .function {
+            color: #50fa7b;
+        }
+
+        .variable {
+            color: #8be9fd;
+        }
+
+        .string {
+            color: #f1fa8c;
+        }
+
+        .number {
+            color: #bd93f9;
+        }
+
+        .comment {
+            color: #6272a4;
+        }
+
+        .data-structure {
+            background: #f8f9fa;
+            border: 3px solid #667eea;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+
+        .dict-item {
+            background: white;
+            border-left: 5px solid #50fa7b;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .key {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.3em;
+            margin-bottom: 8px;
+        }
+
+        .value {
+            color: #666;
+            font-family: 'Courier New', monospace;
+            background: #f0f0f0;
+            padding: 10px;
+            border-radius: 6px;
+            display: inline-block;
+        }
+
+        .iteration-box {
+            border: 3px solid #ff6b6b;
+            background: #fff5f5;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 12px;
+            position: relative;
+        }
+
+        .iteration-badge {
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background: #ff6b6b;
+            color: white;
+            padding: 5px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .step {
+            background: white;
+            border-left: 4px solid #4ecdc4;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+        }
+
+        .step-number {
+            background: #4ecdc4;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .calculation {
+            background: #e8f5e9;
+            border: 2px solid #4caf50;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+        }
+
+        .result {
+            background: #fff3e0;
+            border: 2px solid #ff9800;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        .arrow {
+            text-align: center;
+            font-size: 2em;
+            color: #667eea;
+            margin: 10px 0;
+        }
+
+        .controls {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 1.1em;
+            cursor: pointer;
+            margin: 0 10px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            font-weight: bold;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .highlight {
+            background: #ffeb3b;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .visual-array {
+            display: flex;
+            gap: 10px;
+            margin: 15px 0;
+            flex-wrap: wrap;
+        }
+
+        .array-item {
+            background: #667eea;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.2em;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .min-item {
+            background: #ff6b6b;
+            position: relative;
+        }
+
+        .max-item {
+            background: #4ecdc4;
+            position: relative;
+        }
+
+        .label {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.7em;
+            background: white;
+            color: #333;
+            padding: 2px 8px;
+            border-radius: 4px;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .code-section {
+                font-size: 14px;
+                padding: 15px;
+            }
+
+            button {
+                padding: 12px 25px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🔍 Visual Code Explanation</h1>
+        <p class="subtitle">Understanding Dictionary Loops & Calculations</p>
+
+        <div class="code-section">
+            <span class="comment"># Original Data Structure</span>
+            sales_data = {
+            <span class="string">'John'</span>: [<span class="number">5000</span>, <span class="number">5200</span>,
+            <span class="number">5100</span>, <span class="number">5300</span>, <span class="number">5400</span>],
+            <span class="string">'Sarah'</span>: [<span class="number">3000</span>, <span class="number">4000</span>,
+            <span class="number">6000</span>, <span class="number">5000</span>, <span class="number">7000</span>],
+            <span class="string">'Mike'</span>: [<span class="number">4800</span>, <span class="number">4900</span>,
+            <span class="number">4850</span>, <span class="number">4950</span>, <span class="number">4900</span>]
+            }
+
+            <span class="comment"># The Loop</span>
+            <span class="keyword">for</span> <span class="variable">person</span>, <span class="variable">sales</span>
+            <span class="keyword">in</span> sales_data.<span class="function">items</span>():
+            range_val = <span class="function">max</span>(<span class="variable">sales</span>) - <span
+                class="function">min</span>(<span class="variable">sales</span>)
+            mean_val = np.<span class="function">mean</span>(<span class="variable">sales</span>)
+        </div>
+
+        <div class="data-structure">
+            <h2 style="color: #667eea; margin-bottom: 20px;">📊 Understanding the Dictionary</h2>
+            <p style="margin-bottom: 15px; font-size: 1.1em;">A <strong>dictionary</strong> stores <span
+                    class="highlight">key-value pairs</span>:</p>
+
+            <div class="dict-item">
+                <div class="key">Key: 'John'</div>
+                <div class="value">Value: [5000, 5200, 5100, 5300, 5400]</div>
+            </div>
+
+            <div class="dict-item">
+                <div class="key">Key: 'Sarah'</div>
+                <div class="value">Value: [3000, 4000, 6000, 5000, 7000]</div>
+            </div>
+
+            <div class="dict-item">
+                <div class="key">Key: 'Mike'</div>
+                <div class="value">Value: [4800, 4900, 4850, 4950, 4900]</div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="prevBtn" onclick="changeIteration(-1)">⬅️ Previous</button>
+            <button id="nextBtn" onclick="changeIteration(1)">Next ➡️</button>
+            <button onclick="resetAnimation()">🔄 Reset</button>
+        </div>
+
+        <div id="iterationContent"></div>
+    </div>
+
+    <script>
+        const salesData = {
+            'John': [5000, 5200, 5100, 5300, 5400],
+            'Sarah': [3000, 4000, 6000, 5000, 7000],
+            'Mike': [4800, 4900, 4850, 4950, 4900]
+        };
+
+        let currentIteration = 0;
+        const people = Object.keys(salesData);
+
+        function changeIteration(direction) {
+            currentIteration += direction;
+            if (currentIteration < 0) currentIteration = 0;
+            if (currentIteration > people.length) currentIteration = people.length;
+            updateDisplay();
+        }
+
+        function resetAnimation() {
+            currentIteration = 0;
+            updateDisplay();
+        }
+
+        function updateDisplay() {
+            const content = document.getElementById('iterationContent');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+
+            prevBtn.disabled = currentIteration === 0;
+            nextBtn.disabled = currentIteration === people.length;
+
+            if (currentIteration === 0) {
+                content.innerHTML = `
+                    <div style="text-align: center; padding: 40px; background: #f8f9fa; border-radius: 12px; margin: 20px 0;">
+                        <h2 style="color: #667eea; margin-bottom: 15px;">▶️ Ready to Start!</h2>
+                        <p style="font-size: 1.2em; color: #666;">Click <strong>Next</strong> to see the first iteration</p>
+                        <p style="margin-top: 15px; color: #999;">The loop will go through each person one by one</p>
+                    </div>
+                `;
+            } else if (currentIteration > people.length - 1) {
+                content.innerHTML = `
+                    <div style="text-align: center; padding: 40px; background: #e8f5e9; border-radius: 12px; margin: 20px 0;">
+                        <h2 style="color: #4caf50; margin-bottom: 15px;">✅ Loop Complete!</h2>
+                        <p style="font-size: 1.2em; color: #666;">We've processed all ${people.length} people</p>
+                        <p style="margin-top: 15px; color: #999;">Click Reset to see it again</p>
+                    </div>
+                `;
+            } else {
+                const person = people[currentIteration - 1];
+                const sales = salesData[person];
+                const maxVal = Math.max(...sales);
+                const minVal = Math.min(...sales);
+                const rangeVal = maxVal - minVal;
+                const meanVal = (sales.reduce((a, b) => a + b, 0) / sales.length).toFixed(0);
+
+                content.innerHTML = `
+                    <div class="iteration-box">
+                        <div class="iteration-badge">Iteration ${currentIteration} of ${people.length}</div>
+                        
+                        <h2 style="color: #ff6b6b; margin: 20px 0;">🔄 Loop Iteration: Processing "${person}"</h2>
+                        
+                        <div class="step">
+                            <span class="step-number">1</span>
+                            <strong>Extract Variables:</strong>
+                            <div style="margin-left: 40px; margin-top: 10px;">
+                                <code style="background: #f0f0f0; padding: 8px 12px; border-radius: 6px; display: inline-block; margin: 5px 0;">
+                                    person = "${person}"
+                                </code><br>
+                                <code style="background: #f0f0f0; padding: 8px 12px; border-radius: 6px; display: inline-block; margin: 5px 0;">
+                                    sales = [${sales.join(', ')}]
+                                </code>
+                            </div>
+                        </div>
+                        
+                        <div class="arrow">⬇️</div>
+                        
+                        <div class="step">
+                            <span class="step-number">2</span>
+                            <strong>Visualize the Sales Data:</strong>
+                            <div class="visual-array">
+                                ${sales.map(val => {
+                    let className = 'array-item';
+                    let label = '';
+                    if (val === minVal) {
+                        className += ' min-item';
+                        label = '<div class="label">MIN</div>';
+                    }
+                    if (val === maxVal) {
+                        className += ' max-item';
+                        label = '<div class="label">MAX</div>';
+                    }
+                    return `<div class="${className}">${label}$${val.toLocaleString()}</div>`;
+                }).join('')}
+                            </div>
+                        </div>
+                        
+                        <div class="arrow">⬇️</div>
+                        
+                        <div class="step">
+                            <span class="step-number">3</span>
+                            <strong>Calculate Range:</strong>
+                            <div class="calculation">
+                                range_val = max(sales) - min(sales)<br>
+                                range_val = $${maxVal.toLocaleString()} - $${minVal.toLocaleString()}<br>
+                                range_val = $${rangeVal.toLocaleString()}
+                            </div>
+                        </div>
+                        
+                        <div class="arrow">⬇️</div>
+                        
+                        <div class="step">
+                            <span class="step-number">4</span>
+                            <strong>Calculate Mean (Average):</strong>
+                            <div class="calculation">
+                                mean_val = (${sales.join(' + ')}) ÷ ${sales.length}<br>
+                                mean_val = ${sales.reduce((a, b) => a + b, 0).toLocaleString()} ÷ ${sales.length}<br>
+                                mean_val = $${meanVal}
+                            </div>
+                        </div>
+                        
+                        <div class="arrow">⬇️</div>
+                        
+                        <div class="result">
+                            📊 <strong>Results for ${person}:</strong><br>
+                            • Range = $${rangeVal.toLocaleString()} (difference between highest and lowest)<br>
+                            • Mean = $${meanVal} (average of all values)
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        // Initialize
+        updateDisplay();
+    </script>
+</body>
+
+</html>
