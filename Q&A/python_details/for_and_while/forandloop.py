@@ -13,10 +13,16 @@ for count in range(5):
     print(count)
 
 """ python code for detais how does it work """
-print(dir(__builtins__)) ##see all builtins names 
+#print(dir(__builtins__)) ##see all builtins names 
 #inspect any object
 import inspect
-print(inspect.getmembers(list))
+#print(inspect.getmembers(list))
 
 #view sourcs code 
-print(inspect.getsource(sum))
+#print(inspect.getsource(sum))
+
+numbers = [1,2,3,4,5,6,6,8,8]
+for num in numbers:
+    if num > 5:
+        break
+    print(num)
