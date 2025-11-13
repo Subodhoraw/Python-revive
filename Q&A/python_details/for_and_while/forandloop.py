@@ -13,4 +13,10 @@ for count in range(5):
     print(count)
 
 """ python code for detais how does it work """
-print
+print(dir(__builtins__)) ##see all builtins names 
+#inspect any object
+import inspect
+print(inspect.getmembers(list))
+
+#view sourcs code 
+print(inspect.getsource(sum))
