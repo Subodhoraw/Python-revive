@@ -66,7 +66,7 @@ greet("subodh")
 # here is a bug 
 def add_item(item, items =[]):
     items.append(item)
-    return items
+    return items 
 
 #now see what happens 
 print(add_item("apple"))
