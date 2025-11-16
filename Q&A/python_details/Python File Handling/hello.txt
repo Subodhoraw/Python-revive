@@ -1,0 +1,11 @@
+==================================================
+Patient recodrs
+ = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+Name :Josh Oraw 
+ Age :45 
+Blood Type :o+ 
+Diagnosis :Type 2 Diabetes 
+Medications :Metformin 500mg 
+Next Appointment :2024-12-01 
+
+==================================================
