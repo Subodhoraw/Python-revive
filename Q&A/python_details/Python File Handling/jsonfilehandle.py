@@ -49,11 +49,3 @@ if loaded_data:
     print(f"Allergies: {','.join(loaded_data['allergies'])}")
     for record in loaded_data['medical_history']:
         print(f" [{record['date']}]{record['diagnosis']}")
-
-
-
-
-
-
-                    
-
