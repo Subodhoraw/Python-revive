@@ -1,0 +1,27 @@
+{
+    "patient_ID": "P12345",
+    "name": "Sarah Corner",
+    "age": 35,
+    "Blood_type": "AB+",
+    "medical_history": [
+        {
+            "date": "2024-01-15",
+            "diagnosis": "flu",
+            "treatment": "Rest and fluids"
+        },
+        {
+            "date": "2024-03-20",
+            "diagnosis": "sprained ankle",
+            "treatment": "RICE method"
+        }
+    ],
+    "allergies": [
+        "Penicillin",
+        "peanuts"
+    ],
+    "emergency_contacts": {
+        "name": "John Conor",
+        "reletionships": "Spouse",
+        "phone": "555-0123"
+    }
+}
