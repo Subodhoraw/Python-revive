@@ -25,3 +25,12 @@ arr_float = np.array([1,2,3],dtype = np.float64)
 print(arr_float)
 arr_bool= np.array([1,2,3],dtype = bool)
 print(arr_bool)
+## lets go for 2d 
+arr =np.array([[1,2,3,4,5],
+               [1,2,3,4,5]])
+
+print(arr[0,0])
+print(arr[1,2])
+print(arr[0])
+print(arr[:,0])
+print(arr[0:2,1:3])
