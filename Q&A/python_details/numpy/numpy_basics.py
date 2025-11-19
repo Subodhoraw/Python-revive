@@ -34,3 +34,10 @@ print(arr[1,2])
 print(arr[0])
 print(arr[:,0])
 print(arr[0:2,1:3])
+arr = np.array([1,2,3,4,5,6,7])
+print(arr[0])
+print(arr[-1])
+print(arr[1:4]) # it will slice from  1 index to 4 index before 
+print(arr[:4]) # it will return till index 2 
+print(arr[2:]) # it will rturn from index 2 to end 
+print(arr[::2])
