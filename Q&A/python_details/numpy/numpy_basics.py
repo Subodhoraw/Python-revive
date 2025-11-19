@@ -18,3 +18,10 @@ print(f" it will find range of array {range_arr} and  if it will steps at 3 {ran
 # evenly spaced value 
 linespace = np.linspace(0,1,5)
 print(f" it eill fine linespace of float value {linespace}")
+# specify data typee
+arr_int = np.array([1,2,3],dtype = np.int32)
+print(arr_int)
+arr_float = np.array([1,2,3],dtype = np.float64)
+print(arr_float)
+arr_bool= np.array([1,2,3],dtype = bool)
+print(arr_bool)
