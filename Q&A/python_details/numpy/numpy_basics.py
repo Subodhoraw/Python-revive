@@ -126,4 +126,12 @@ print(np.var(arr))
 print(np.sum(arr))
 print(np.prod(arr))
 
-
+# 2d arra 
+arr = np.array([[1,3,4],
+                [4,5,6]])
+print(np.median(arr))
+print(np.mean(arr))
+print(np.std(arr))
+print(np.var(arr))
+print(np.sum(arr))
+print(np.prod(arr))
