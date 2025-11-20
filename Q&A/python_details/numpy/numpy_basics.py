@@ -115,3 +115,15 @@ print(horizontal)
 arr = np.arange(12).reshape(3,4)
 split =np.split(arr,3,axis = 0)
 print(split)
+
+
+## stastical operations 
+arr = np.array([2,3,5,6,7,8,9,10,20,40])
+print(np.median(arr))
+print(np.mean(arr))
+print(np.std(arr))
+print(np.var(arr))
+print(np.sum(arr))
+print(np.prod(arr))
+
+
