@@ -102,4 +102,16 @@ print(expanded)
 #remove dimension
 squeezed = np.squeeze(expanded)
 print(squeezed) #it can reshaped or squezzed to remove one dimension
+arr1 = np.array([[1,3],[3,4]])
+arr2 = np.array([[4,5],[2,4]])
 
+#concatanet vertically
+verticle = np.vstack([arr1,arr2])
+print(verticle)
+horizontal = np.concatenate([arr1,arr2])
+print(horizontal)
+
+## split
+arr = np.arange(12).reshape(3,4)
+split =np.split(arr,3,axis = 0)
+print(split)
