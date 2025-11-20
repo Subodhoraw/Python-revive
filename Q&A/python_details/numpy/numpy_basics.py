@@ -60,3 +60,27 @@ print(arr1 *arr2)
 # comparison operations
 arr = np.array ([1,2,3,4,5])
 print(arr > 3)
+arr = np.array([10,202,30,40,50])
+
+# boolean  indexing 
+mask = arr > 25 
+print(mask)
+print(arr[mask])
+#indexing directly 
+print(arr[arr>10])
+print(arr[(arr > 15) &(arr < 100)])
+
+#fancy indexing 
+indices = np.array([0,2,4])
+arr2d = np.array([[1,3,4],
+                  [9,7,9],
+                  [3,5,7]])
+print(arr2d[arr2d > 2])
+
+##  array reshaping 
+
+arr = np.array([[1,3,5],
+                [4,5,6],
+                [8,9,10]])
+#reshaped = arr.reshape(5,2) ## make sure when youre reshaping matrix should match with total number ar asset
+
