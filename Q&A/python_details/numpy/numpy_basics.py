@@ -79,8 +79,27 @@ print(arr2d[arr2d > 2])
 
 ##  array reshaping 
 
+"""array manipulation"""
+
 arr = np.array([[1,3,5],
                 [4,5,6],
                 [8,9,10]])
 #reshaped = arr.reshape(5,2) ## make sure when youre reshaping matrix should match with total number ar asset
+flat = arr.flatten() # flatten the array provided
+print(flat)
+flat = arr.ravel()# need to check 
+print(flat)
+
+#transpose
+
+transposed = arr.T #it will transpose into t shape  means rows reshaped to column 
+print(transposed)
+
+## add dimensions
+expanded = np.expand_dims(arr, axis = 0) #it willl reshape from transposed expanded  
+print(expanded)
+
+#remove dimension
+squeezed = np.squeeze(expanded)
+print(squeezed) #it can reshaped or squezzed to remove one dimension
 
