@@ -41,3 +41,22 @@ print(arr[1:4]) # it will slice from  1 index to 4 index before
 print(arr[:4]) # it will return till index 2 
 print(arr[2:]) # it will rturn from index 2 to end 
 print(arr[::2])
+
+
+## basics operations 
+import numpy as np
+arr = np.array([1,2,3,4,5])
+print(arr + 10)
+print(arr * 2)
+print(arr**2)
+print(arr /2)
+
+#operation between arrays
+arr1 = np.array([1,2,3])
+arr2 = np.array([4,5,6]) 
+print(arr1 + arr2)
+print(arr1 *arr2)
+
+# comparison operations
+arr = np.array ([1,2,3,4,5])
+print(arr > 3)
