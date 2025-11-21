@@ -177,6 +177,13 @@ print(arr1)
 arr2 = np.array([2,4,5,8,9])
 results = arr1 + arr2
 print(results)
+## matrix multiplication 
+A = np.array([[1,4],[6,7]])
+B = np.array([[1,18],[23,9]])
+c = np.dot(A,B)
+C = A @ B
+print(c)
+print(C)
 
 print()
 
