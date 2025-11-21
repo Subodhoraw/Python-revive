@@ -149,6 +149,13 @@ print(np.log(arr)) # Natural log
 print(np.log10(arr))
 print(np.sqrt(arr))
 
+# rounding 
+arr = np.array([1,2,3,4,5,6,10])
+print(np.exp(arr)) ## e = 2.71828 it will provide outcome of e to the power x = 1, 2. 3,4,5
+print(np.log(arr)) # Natural log
+print(np.log10(arr))
+print(np.sqrt(arr))
+
 
 
 
