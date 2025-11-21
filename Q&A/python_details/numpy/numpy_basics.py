@@ -135,3 +135,12 @@ print(np.std(arr))
 print(np.var(arr))
 print(np.sum(arr))
 print(np.prod(arr))
+
+## to learn exponentials import numpy as np
+arr = np.array([0,30,45,50,60,90])
+print(np.sin(np.radians(arr)))
+print(np.cos(np.radians(arr)))
+print(np.tan(np.radians(arr)))
+
+
+
