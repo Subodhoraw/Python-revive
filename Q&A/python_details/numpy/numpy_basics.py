@@ -136,11 +136,19 @@ print(np.var(arr))
 print(np.sum(arr))
 print(np.prod(arr))
 
-## to learn exponentials import numpy as np
+## to learn trignometry  import numpy as np
 arr = np.array([0,30,45,50,60,90])
 print(np.sin(np.radians(arr)))
 print(np.cos(np.radians(arr)))
 print(np.tan(np.radians(arr)))
+
+## exponentials we learnt 
+arr = np.array([1,2,3,4,5,6,10])
+print(np.exp(arr)) ## e = 2.71828 it will provide outcome of e to the power x = 1, 2. 3,4,5
+print(np.log(arr)) # Natural log
+print(np.log10(arr))
+print(np.sqrt(arr))
+
 
 
 
