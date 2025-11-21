@@ -156,6 +156,28 @@ print(np.log(arr)) # Natural log
 print(np.log10(arr))
 print(np.sqrt(arr))
 
+ ### advanced broadcasting mths 
 
+ # advanceed broadcasting 
+ #broadcasting 
+arr = np.array([[2,3,4,],
+                [11,12,13]])
+print(arr + 10)
+
+## lets add 2d array with 2d array 
+row = np.array([2,4,5])
+print(arr +row )
+
+## column broadcastes 
+col = np.array([[11],[12]])
+print(row + col)
+
+arr1 = np.array([1,2,3]).reshape(3,1)
+print(arr1)
+arr2 = np.array([2,4,5,8,9])
+results = arr1 + arr2
+print(results)
+
+print()
 
 
