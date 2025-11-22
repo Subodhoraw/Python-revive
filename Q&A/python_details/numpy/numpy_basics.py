@@ -188,6 +188,11 @@ print(C)
 ## matrix operationns 
 import numpy as np
 print(np.linalg.det(A))
+ # Integer array indexing 
+arr = np.arange(12).reshape(3,4)
+print(arr)
 
-
-
+#get specific elements
+rows = np.array([0,1,2])
+cols = np.array([1,2,3])
+print(arr[rows,cols])
