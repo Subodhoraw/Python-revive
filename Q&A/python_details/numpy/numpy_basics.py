@@ -196,3 +196,17 @@ print(arr)
 rows = np.array([0,1,2])
 cols = np.array([1,2,3])
 print(arr[rows,cols])
+## matrix operationns 
+import numpy as np
+print(np.linalg.det(A)) # determinate (ad - bc)
+print(np.linalg.inv(A)) #inverse matrix
+print(np.linalg.eig(A)) 
+
+#solve linear equation Ax = b
+A = np.array([[3,4],
+              [1,2]])
+b = np.array([9,8])
+x = np.linalg.solve(A,b)
+print(x)
+print(A.T)
+
