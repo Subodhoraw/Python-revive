@@ -185,6 +185,9 @@ C = A @ B
 print(c)
 print(C)
 
-print()
+## matrix operationns 
+import numpy as np
+print(np.linalg.det(A))
+
 
 
