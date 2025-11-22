@@ -209,4 +209,3 @@ b = np.array([9,8])
 x = np.linalg.solve(A,b)
 print(x)
 print(A.T)
-
