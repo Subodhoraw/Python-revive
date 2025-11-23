@@ -225,3 +225,5 @@ print(arr)
 normal = np.random.normal(loc = 0, scale = 1, size = 1000)
 print(normal)
 
+uniform = np.random.uniform(low = 0, high = 10,size = 1000)
+print(uniform)
