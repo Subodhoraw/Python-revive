@@ -331,3 +331,43 @@ If you want, I can also create:
 * or a **medical image processing detailed guide**
 
 Just tell me: **“make PDF”** or **“next cheat sheet”**.
+
+
+# Creating arrays
+np.array([1, 2, 3])           # From list
+np.zeros(5)                   # Zeros
+np.ones(5)                    # Ones
+np.arange(0, 10, 2)          # Range
+np.linspace(0, 1, 5)         # Evenly spaced
+np.random.rand(5)            # Random
+
+# Array properties
+arr.shape                     # Dimensions
+arr.dtype                     # Data type
+arr.size                      # Total elements
+
+# Indexing
+arr[0]                        # Single element
+arr[1:4]                      # Slice
+arr[arr > 5]                  # Boolean indexing
+
+# Operations
+np.mean(arr)                  # Average
+np.std(arr)                   # Standard deviation
+np.sum(arr)                   # Sum
+np.max(arr)                   # Maximum
+np.min(arr)                   # Minimum
+
+# Reshaping
+arr.reshape(2, 3)            # Reshape
+arr.T                        # Transpose
+arr.flatten()                # Flatten
+
+# Combining
+np.vstack([arr1, arr2])      # Vertical stack
+np.hstack([arr1, arr2])      # Horizontal stack
+
+# Linear algebra
+np.dot(A, B)                 # Matrix multiplication
+np.linalg.inv(A)             # Inverse
+np.linalg.det(A)             # Determinant
