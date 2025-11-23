@@ -209,3 +209,19 @@ b = np.array([9,8])
 x = np.linalg.solve(A,b)
 print(x)
 print(A.T)
+# random sampling 
+np.random.seed(42) #for reproducibility
+
+#random choice from array
+arr = np.array([1,2,3,4,5,6])
+sample = np.random.choice(arr,size = 3,replace = False) #replace = false means it will never choose the same digit
+print(sample)
+
+#Random shuffle
+print(np.random.shuffle(arr))
+print(arr)
+
+#random with specefic distribution 
+normal = np.random.normal(loc = 0, scale = 1, size = 1000)
+print(normal)
+
